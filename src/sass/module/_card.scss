@@ -1,0 +1,62 @@
+@use "global" as *;
+/* カード単体 */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, rem(450));
+  margin-right: auto;
+  margin-left: auto;
+  padding: rem(16);
+  background: $white;
+  box-shadow: 0 rem(16) rem(32) rgb(0 0 0 / 50%);
+
+  @include mq() {
+    width: 100%;
+    transition: .3s;
+  }
+}
+
+.card:hover {
+  @media (any-hover:hover) {
+    transform:scale(1.1);
+    transform-origin:center center;
+  }
+}
+
+.card__img {
+  width: min(rem(100), rem(100));
+  height: min(rem(90), rem(90));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card__img img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.card__header {
+  padding: rem(8) 0;
+}
+
+.card__title {
+  font-size: rem(19);
+  font-family: $second-font-family;
+  font-weight: $bold;
+  color: $color-main;
+  text-align: center;
+}
+
+.card__text,
+.card__footer {
+  margin-top: auto;
+}
+
+.card__text {
+  text-align: justify;
+}
+
+
+
+

@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.media__inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 375/186;
+
+  @include mq() {
+    aspect-ratio: 768/327;
+  }
+}
+
+.media__inner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: map-get($layer, 'default');
+  top: 0;
+  right: 0;
+  aspect-ratio: 640/453;
+  width: 70%;
+  background: url(../images/common/think-1@2x.webp) top right / 100% no-repeat;
+
+  @include mq() {
+    aspect-ratio: 768/470;
+    max-width: rem(760);
+  }
+}
+
+.media__title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.3);
+  font-size: rem(18);
+  font-family: $second-font-family;
+  font-weight: $bold;
+  letter-spacing: .1em;
+  padding: rem(8) rem(10);
+  z-index: map-get($layer, 'top');
+  width: 60%;
+
+  @include mq() {
+    font-size: rem(24);
+  }
+}
+
+.media__text {
+  background: $color-bg-sub;
+  padding: rem(24);
+  width: 100%;
+  text-align: justify;
+
+  @include mq() {
+    padding: rem(24) rem(50);
+  }
+}
+
+.media__inner--reverse::after {
+  right: auto;
+  left: 0;
+  background: url(../images/common/think-2.webp) top left / 110% no-repeat;
+}
+
+.media__title--reverse {
+  left: auto;
+  right: 0;
+}
+
+//2つ目以降のmedia
+.media + .media {
+  margin-top: rem(60);
+
+  @include mq() {
+    margin-top: rem(80);
+  }
+}

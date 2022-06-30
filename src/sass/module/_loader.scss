@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.loader-bg {
+  position: fixed;
+  background-color: rgba(255,255,255,.5);
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+.loader-bg .line-spin-fade-loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.line-scale-party>div, .line-scale-pulse-out-rapid>div, .line-scale-pulse-out>div, .line-scale>div, .line-spin-fade-loader>div {
+  background-color: $color-main;
+}

@@ -1,0 +1,27 @@
+@use "global" as *;
+/* カード複数 */
+
+.cards {
+  @include mq() {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.cards__item {
+  @include mq() {
+    width: calc((100% - rem(64)) / 5 );
+  }
+}
+
+//2枚目以降
+.cards__item + .cards__item {
+  margin-top: rem(20);
+
+  @include mq() {
+    margin-top: 0;
+    margin-left: rem(16);
+  }
+}
+
+

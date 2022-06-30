@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.pagetop-btn {
+  position: fixed;
+  bottom: rem(20);
+  right: rem(20);
+  z-index: map-get($layer, 'pagetop');
+
+    @include mq() {
+    bottom: rem(30);
+    right: rem(30);
+  }
+}
+
+.pagetop {
+  display: block;
+  position: relative;
+  background-color: $white;
+  width: rem(41);
+  height: rem(42);
+  border-radius: rem(10);
+}
+
+.fa-caret-square-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: rem(50);
+  color: #1c8536;
+
+  @media (any-hover:hover) {
+    transition: .3s;
+    cursor: pointer;
+  }
+}
+
+.fa-caret-square-up:hover {
+  @media (any-hover:hover) {
+    color: #3EF820;
+  }
+}
+
+
+
+

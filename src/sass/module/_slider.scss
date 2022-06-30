@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.slider {
+  position: relative;
+  z-index: map-get($layer, "default");
+  height: 100vh;
+}
+
+.slider__text {
+  position: absolute;
+  z-index: map-get($layer, "top");
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $second-font-family;
+  text-align: center;
+  font-size: rem(30);
+  letter-spacing: 0.1em;
+  color: $color-main;
+  width: 100%;
+  /* 文字の縁取り */
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.65), -2px 2px 6px rgba(255, 255, 255, 0.65),
+    2px -2px 6px rgba(255, 255, 255, 0.65), -2px -2px 6px rgba(255, 255, 255, 0.65),
+    2px 0px 6px rgba(255, 255, 255, 0.65), 0px 2px 6px rgba(255, 255, 255, 0.65), -2px 0px 6px rgba(255, 255, 255, 0.65),
+    0px -2px 6px rgba(255, 255, 255, 0.65);
+
+  @include mq() {
+    font-size: rem(50);
+  }
+}
+
+.slider__top,
+.slider__bottom {
+  height: 50vh;
+}
+
+.slider-item {
+  width: 100%;
+  aspect-ratio: 2560 / 1707;
+  height: 50vh;
+}
+
+.slider-item-1 {
+  background: url(../images/common/top_up1@sp.webp) no-repeat center center / cover;
+
+  @include mq() {
+    background: url(../images/common/top_up1@2x.webp) no-repeat top 41% center / cover;
+  }
+}
+.slider-item-2 {
+  background: url(../images/common/top_up2@sp.webp) no-repeat top center / cover;
+
+  @include mq() {
+    background: url(../images/common/top_up2@2x.webp) no-repeat top 21% center / cover;
+  }
+}
+.slider-item-3 {
+  background: url(../images/common/top_down1@sp.webp) no-repeat top center / cover;
+
+  @include mq() {
+    background: url(../images/common/top_down1@2x.webp) no-repeat top 22% center / cover;
+  }
+}
+.slider-item-4 {
+  background: url(../images/common/top_down2@sp.webp) no-repeat top center / cover;
+
+  @include mq() {
+    background: url(../images/common/top_down2@2x.webp) no-repeat top 15% center / cover;
+  }
+}

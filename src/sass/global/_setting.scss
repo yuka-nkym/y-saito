@@ -1,0 +1,106 @@
+@use "sass:math";
+
+////////////////////
+// インナー幅設定
+////////////////////
+// コンテンツのインナー幅
+$inner: 1100px;
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 20px;
+
+////////////////////
+// フォント設定
+////////////////////
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap');
+$base-font-family: 'Noto Sans JP', sans-serif;
+$second-font-family: 'Noto Serif JP', serif;
+
+body {
+  font-family: $base-font-family;
+}
+
+// フォントウェイト
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+////////////////////
+// 色の指定
+////////////////////
+
+$black: #111;
+$white: #fff;
+$gray: #777;
+$color-main: #00007f;
+$color-sub: #0d5ace;
+$color-bg-sub: #E0ECEE;
+
+////////////////////
+// メディアクエリとブレークポイント
+////////////////////
+
+//ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+);
+
+
+//メディアクエリー
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+// remへの計算式（16pxを基準）
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+////////////////////
+// 非表示設定
+////////////////////
+
+//768px以上を表示
+.u-desktop {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+//モバイルのみ表示
+.u-mobile {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+// 階層
+$layer: (
+  modal: 90,
+  hamburger: 80,
+  logo: 70,
+  drawer: 60,
+	header: 50,
+  pagetop: 40,
+	footer: 30,
+  top: 20,
+	btn: 10,
+	default: 1,
+  border: -1,
+);
+
+

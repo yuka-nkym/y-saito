@@ -1,0 +1,264 @@
+@use "global" as *;
+
+$contact-border: #4973ff;
+$contact-require: #dc143c;
+$contact-gray: #3e3e3e;
+
+/* contact
+※必須項目入力したらボタンを有効化
+---------------------------- */
+.contact {
+	padding: rem(70) rem(25);
+
+	@include mq() {
+  	padding: rem(100) rem(40);
+	}
+}
+
+.contact__inner {
+  box-shadow: rem(5) rem(5) rem(20) rgb(180, 197, 233);
+  border-radius: rem(12);
+  overflow: hidden;
+}
+
+.contact__content {
+  padding: rem(70) rem(10);
+  
+  @include mq() {
+    padding: rem(100) rem(120);
+  }
+}
+
+.contact__title {
+  padding-bottom: rem(50);
+
+  @include mq() {
+    padding-bottom: rem(60);
+  }
+}
+
+.contact__text p {
+ 
+  @include mq() {
+    text-align: center;
+  }
+}
+
+.contact__list {
+  margin-top: rem(40);
+  
+  @include mq() {
+    margin-top: rem(60);
+  }
+}
+
+.contact__require {
+  font-size: rem(12);
+  padding: rem(2) rem(6);
+  color: $white;
+  background: $contact-require;
+  margin-left: rem(10);
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px $white inset;
+}
+
+.contact__item + .contact__item {
+  margin-top: rem(27);
+}
+
+.contact__item:not(.message) {
+  @include mq() {
+    display: flex;
+  }
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="tel"] {
+  border-bottom: solid 1px $contact-gray;
+  font-size: rem(16);
+  letter-spacing: .03em;
+  position: relative;
+  width: 100%;
+  padding: rem(1) 0;
+  
+  @include mq() {
+    padding: rem(3) rem(12) rem(2);
+  }
+}
+
+.contact input[type="text"]:hover,
+.contact input[type="text"]:focus,
+.contact input[type="email"]:hover,
+.contact input[type="email"]:focus,
+.contact input[type="tel"]:hover,
+.contact input[type="tel"]:focus {
+    border-color: $contact-border;
+    outline: none;
+}
+
+.contact textarea {
+  border: solid 1px $contact-gray;
+  font-size: rem(16);
+  height: rem(160);
+  margin-top: rem(10);
+  outline: none;
+  padding: .5em;
+  transition: .3s;
+  width: 100%;
+
+  @include mq() {
+    font-size: rem(21);
+    height: rem(200);
+  }
+}
+
+.contact textarea:hover,
+.contact textarea:focus {
+  border-color: $contact-border;
+  box-shadow: 0 rem(2) rem(4) $contact-border;
+}
+
+.contact__input-box {
+	position: relative;
+  margin-top: rem(3);
+
+	@include mq() {
+		flex: 0 1 100%;
+	}
+}
+
+.contact input[type="text"]:hover + .contact__focus,
+.contact input[type="text"]:focus + .contact__focus,
+.contact input[type="email"]:hover + .contact__focus,
+.contact input[type="email"]:focus + .contact__focus,
+.contact input[type="tel"]:hover + .contact__focus,
+.contact input[type="tel"]:focus + .contact__focus {
+  opacity: 1;
+}
+
+.contact__focus {//hoverとfocusした時のラインはspanで作っている
+  bottom: 1px;
+  box-shadow: 0 rem(2) rem(4) rgba(73, 115, 255, 0.6);
+  display: block;
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity .2s;
+  width: 100%;
+}
+
+//入力エラー
+.contact input:invalid:focus + .contact__focus,
+.contact textarea:invalid:focus {
+  box-shadow: 0 rem(2) rem(4) rgba(220, 20, 60, .6);
+}
+
+.contact input:invalid:focus,
+.contact textarea:invalid:focus {
+  border-color: $contact-require;
+}
+
+.contact__item-title {
+  align-items: center;
+  display: flex;
+  flex: 0 0 rem(190);
+  font-weight: $medium;
+}
+
+.contact__privacy {
+  display: inline-block;
+  margin-top: rem(16);
+
+  @include mq() {
+    margin-top: rem(32);
+  }
+}
+
+.contact__privacy-label a {
+  border-bottom: 1px solid $black;
+  font-weight: $medium;
+}
+
+.contact__privacy-label {
+  cursor: pointer;
+  display: block;
+  font-size: rem(16);
+  padding-left: rem(35);
+  position: relative;
+
+	@include mq() {
+		font-size: rem(18);
+		padding-left: rem(42);
+	}
+}
+
+.contact__privacy-label:hover::before {
+@include mq() {
+    border-color: $contact-border;
+    box-shadow: 0 0 rem(4) $contact-border;
+  }
+}
+
+.contact__privacy-label:before {
+  background: #fff;
+  border: solid 1px $contact-gray;
+  content: '';
+  display: block;
+  height: rem(16);
+  left: 0;
+  position: absolute;
+  top: rem(5);
+  transition: .3s;
+  width: rem(16);
+
+  @include mq() {
+    height: rem(20);
+    width: rem(20);
+  }
+}
+
+.contact__privacy-label:active::before {
+  background-color: rgba(73, 115, 255, 0.2);
+  box-shadow: none;
+}
+
+.contact__privacy-label::after {//チェックマーク
+  border-bottom: solid 2px $contact-border;
+  border-left: solid 2px $contact-border;
+  content: '';
+  display: block;
+  height: rem(6);
+  left: rem(2);
+  opacity: 0;
+  position: absolute;
+  top: rem(8);
+  transform: rotate(-45deg);
+  transition: .3s ease;
+  width: rem(12);
+
+  @include mq() {
+    left: rem(4);
+    top: rem(9);
+  }
+}
+
+.contact input[type="checkbox"]:checked + .contact__privacy-label::after {
+  opacity: 1;
+}
+
+.contact__btn {
+  margin-top: rem(32);
+
+  @include mq() {
+    margin-top: rem(38);
+	}
+}
+
+
+
+
+

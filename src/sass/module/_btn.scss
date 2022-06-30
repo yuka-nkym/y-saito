@@ -1,0 +1,51 @@
+@use "global" as *;
+
+/* 送信と閉じるボタン */
+.btn {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: rem(18);
+	display: inline-block;
+	border-radius: rem(10);
+  font-weight: $medium;
+	text-align: center;
+  display: block;
+  color: $white;
+  letter-spacing: .1em;
+	padding: rem(14) rem(70);
+	box-shadow: 0 3px 6px rgba(#000, .16);
+}
+
+.btn:disabled {
+  background-color: #777;
+}
+
+//送信ボタン
+.btn--submit,
+.btn--back {
+  background-color: #0070f3;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+.btn--submit:hover,
+.btn--back:hover {
+  @media (any-hover:hover) {
+    opacity: .7;
+  }
+}
+
+//モーダルの閉じるボタン
+.btn--modal {
+	background: $color-main;
+	transition: .3s;
+}
+
+.btn--modal:hover {
+  @media (any-hover:hover) {
+  	background: $color-sub;
+  }
+}
+
+

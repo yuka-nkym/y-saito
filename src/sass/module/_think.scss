@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.think__media {
+  width: 100%;
+  padding-right: $padding-sp;//20px
+  padding-left: $padding-sp;//20px
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq("md") {
+    max-width: $inner + strip-unit(100px) * 2;
+    padding-right: rem(100);//50px
+    padding-left: rem(100);//50px
+  }
+}
+
+.think__title {
+  padding-bottom: rem(50);
+
+  @include mq() {
+    padding-bottom: rem(60);
+  }
+}

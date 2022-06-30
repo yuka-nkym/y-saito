@@ -1,0 +1,19 @@
+@use "global" as *;
+
+.insu {
+  background: url(../images/common/sora@2x.webp) no-repeat left bottom / cover;
+  padding: rem(70) 0;
+  background-attachment: fixed;
+
+  @include mq() {
+    padding: rem(100) 0;
+  }
+}
+
+.insu__title {
+  padding-bottom: rem(50);
+
+  @include mq() {
+    padding-bottom: rem(60);
+  }
+}

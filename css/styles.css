@@ -258,8 +258,8 @@ select::-ms-expand {
 }
 
 .access__item + .access__item {
-  padding-top: 5px;
-  padding-top: 0.3125rem;
+  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .access__item i {
@@ -413,6 +413,7 @@ select::-ms-expand {
 .card__text {
   text-align: justify;
 }
+
 /* カード複数 */
 @media screen and (min-width: 768px) {
   .cards {
@@ -426,7 +427,7 @@ select::-ms-expand {
 
 @media screen and (min-width: 768px) {
   .cards__item {
-    width: calc(20% - 0.8rem);
+    width: calc(20% - 1.2rem);
   }
 }
 
@@ -437,7 +438,7 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .cards__item + .cards__item {
     margin-top: 0;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
 }
 
@@ -461,10 +462,11 @@ select::-ms-expand {
 
 .contact-check__btn {
   margin-top: 32px;
+  margin-top: 2rem;
 }
 @media screen and (min-width: 768px) {
   .contact-check__btn {
-    margin-top: 40px;
+    margin-top: 2.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1014,8 +1016,6 @@ input:-webkit-autofill {
   width: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(#021b79), to(#0575e6));
   background: linear-gradient(to top, #021b79 0%, #0575e6 100%);
-  height: 50px;
-  height: 3.125rem;
   z-index: 50;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1715,8 +1715,13 @@ pc
 }
 
 .profile__year {
-  padding: 10px;
-  padding: 0.625rem;
+  padding: 24px 0;
+  padding: 1.5rem 0;
+}
+
+.profile__item + .profile__item {
+  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .profile__item span {

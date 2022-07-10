@@ -63,7 +63,11 @@
 }
 
 .profile__year {
-  padding: rem(10);
+  padding: rem(24) 0;
+}
+
+.profile__item + .profile__item {
+  margin-top: rem(16);
 }
 
 .profile__item span {

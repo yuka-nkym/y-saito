@@ -10,7 +10,7 @@
 
 .cards__item {
   @include mq() {
-    width: calc((100% - rem(64)) / 5 );
+    width: calc((100% - rem(96)) / 5 );
   }
 }
 
@@ -20,7 +20,7 @@
 
   @include mq() {
     margin-top: 0;
-    margin-left: rem(16);
+    margin-left: rem(24);
   }
 }
 
